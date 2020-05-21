@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Social Network</title>
+  <style>
+    #user-list {
+      list-style: none;
+      padding: none;
+    }
+
+    #user-list li {
+      display: flex;
+      border: 1px solid lightslategray;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem;
+      max-width: 250px;
+      margin-bottom: 2rem;
+    }
+
+    #user-list li:last-of-type {
+      margin-bottom: 0;
+    }
+
+    #user-list li h3 {
+      margin-left: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+    <ul id="user-list">
+
+    </ul>
+  </main>
+  <footer></footer>
+  <script src="./fetchUsers.js"></script>
+</body>
+</html>

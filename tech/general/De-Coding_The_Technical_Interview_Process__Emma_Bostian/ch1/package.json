@@ -1,0 +1,22 @@
+{
+  "name": "de-coding_the_technical_interview_process__emma_bostian",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "25.2.1",
+    "@typescript-eslint/eslint-plugin": "2.31.0",
+    "@typescript-eslint/parser": "2.31.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "jest": "26.0.1",
+    "prettier": "2.0.5",
+    "ts-jest": "25.5.0",
+    "typescript": "3.8.3"
+  }
+}

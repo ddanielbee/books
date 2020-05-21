@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Sidebar
+  </title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    nav {
+      background: black;
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      height: 100%;
+      transform: translateX(-100%);
+      transition: all 0.4s ease-in-out;
+      z-index: 1;
+    }
+
+    nav.visible {
+      transform: translateX(0);
+    }
+
+    .navigation__close-button {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      background: transparent;
+      color: white;
+      border: none;
+      outline: none;
+    }
+
+    .navigation-list {
+      list-style: none;
+      padding-top: 2rem;
+    }
+
+    .navigation-list__item {
+      font-size: 1.5rem;
+    }
+
+    .navigation-list__item a {
+      display: block;
+      padding: 0.5rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navigation-list__item a:hover, .navigation-list__item a:focus {
+      text-decoration: underline;
+    }
+
+    .navigation-list__item a:visited, .navigation-list__item a:active {
+      color: inherit;
+    }
+
+    .menu {
+      border: 1px solid black;
+      color: black;
+      padding: 0.5rem 1rem;
+      display: block;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      font-weight: semibold;
+      text-decoration: none;
+    }
+
+    .menu:hover, .menu:focus {
+      text-decoration: underline;
+    }
+
+    .menu:visited, .menu:active {
+      color: black;
+    }
+
+    @media screen and (min-width: 600px) {
+      nav {
+        width: 33%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button class="navigation__close-button">X</button>
+      <ul class="navigation-list">
+        <li class="navigation-list__item">
+          <a href="#">Home</a>
+        </li>
+        <li class="navigation-list__item">
+          <a href="#">About</a>
+        </li>
+        <li class="navigation-list__item">
+          <a href="#">Work</a>
+        </li>
+        <li class="navigation-list__item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <a id="menu-button" class="menu" href="/navigation">Menu</a>
+  </header>
+  <script>
+    const handleMenuClick = (show) => (event) => {
+      event.preventDefault();
+      const navigation = document.getElementsByTagName("nav");
+      if(navigation.length > 0) {
+        if(show) {
+          navigation[0].classList.add("visible");
+        } else {
+          navigation[0].classList.remove("visible");
+        }
+      }
+    }
+
+    const menuButton = document.getElementById("menu-button");
+    const closeButton = document.getElementsByClassName("navigation__close-button");
+    if(closeButton.length > 0) {
+      closeButton[0].addEventListener("click", handleMenuClick(false));
+    }
+
+    menuButton.addEventListener("click", handleMenuClick(true));
+  </script>
+</body>
+
+</html>

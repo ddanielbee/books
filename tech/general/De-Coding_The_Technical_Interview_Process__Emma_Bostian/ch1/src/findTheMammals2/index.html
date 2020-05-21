@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find The Mammals 2</title>
+  </head>
+  <body>
+    <main>
+      <h2>All Animals</h2>
+      <section class="all-animals">
+        <div class="animals">
+          <h2>Dog</h2>
+          <p class="mammal-value">true</p>
+        </div>
+        <div class="animals">
+          <h2>Snake</h2>
+          <p class="mammal-value">false</p>
+        </div>
+        <div class="animals">
+          <h2>Cheetah</h2>
+          <p class="mammal-value">true</p>
+        </div>
+      </section>
+      <h2>Only Mammals</h2>
+      <section class="only-mammals"></section>
+    </main>
+    <script>
+      const allAnimals = Array.from(document.getElementsByClassName('all-animals')[0].children);
+      const mammals = allAnimals.filter(
+        (element) => element.getElementsByClassName('mammal-value')[0].textContent === 'true',
+      );
+      const onlyMammalsContainer = document.getElementsByClassName('only-mammals')[0];
+      mammals.forEach((element) => {
+        onlyMammalsContainer.appendChild(element.cloneNode(true));
+      });
+    </script>
+  </body>
+</html>
